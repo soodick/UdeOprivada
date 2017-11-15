@@ -1,0 +1,78 @@
+<!--
+EJEMPLO DE COMO AGREGAR ELEMENTOS
+A LA BARRA LATERAL
+
+<ul data-smart-menu>
+  <li data-ui-sref-active="active">
+    <a data-ui-sref="app.dashboard" title="Dashboard">
+      <i class="fa fa-lg fa-fw fa-home"></i>
+      <span class="menu-item-parent">Dashboard</span>
+    </a>
+  </li>
+  <li data-menu-collapse>
+    <a href="#">
+      <i class="fa fa-lg fa-fw fa-bar-chart-o"></i>
+      <span class="menu-item-parent">Graphs</span>
+    </a>
+    <ul>
+      <li data-ui-sref-active="active">
+         <a data-ui-sref="app.graphs.flot">Flot Chart</a>
+      </li>
+      <li data-ui-sref-active="active">
+          <a data-ui-sref="app.graphs.morris">Morris Charts</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+-->
+
+<nav>
+	<ul data-smart-menu>
+	    <li data-menu-collapse>
+		    <a href="#">
+		      	<i class="fa fa-lg fa-fw fa-bar-chart-o"></i>
+		      	<span class="menu-item-parent">Menú</span>
+		    </a>
+		    <ul>
+		      <li>
+			      <a href="/condominos/editar/{{currentUser._id}}" tilte="Mis Datos">
+			      <i class="fa fa-lg fa-fw fa-home"></i>
+			      <span class="menu-item-parent">Mis Datos</span>
+			      </a>
+			  </li>
+			  <li>
+			  	  <a href="/condominos/mantenimientos/{{currentUser._id}}" tilte="Mantenimientos">
+	              <i class="fa fa-lg fa-fw fa-dollar"></i>
+	              <span class="menu-item-parent">Mantenimiento</span>
+	              </a>
+              </li>
+              <li>
+	              <a ui-sref="root.areacomun" tilte="Área Comun">
+	              <i class="fa fa-lg fa-fw fa-child"></i>
+	              <span class="menu-item-parent">Área Común</span>
+	              </a>
+              </li>
+		    </ul>
+	    </li>
+	    <li data-menu-collapse>
+		    <a href="#">
+		      	<i class="fa fa-lg fa-fw fa-cog"></i>
+		      	<span class="menu-item-parent">Administración</span>
+		    </a>
+		    <ul>
+              <li>
+	              <a ui-sref="root.condominos" tilte="Condominos">
+	              <i class="fa fa-lg fa-fw fa-user"></i>
+	              <span class="menu-item-parent">Condóminos</span>
+	              </a>
+              </li>
+              <li>
+	              <a ui-sref="root.servicios" tilte="Servicios">
+	              <i class="fa fa-lg fa-fw fa-money"></i>
+	              <span class="menu-item-parent">Servicios</span>
+	              </a>
+              </li>
+		    </ul>
+	    </li>
+	</ul>
+</nav>

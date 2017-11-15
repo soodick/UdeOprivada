@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-sm-12">
+		<a class="btn btn-primary" ui-sref="root.mantenimientopagos">
+		  Nuevo Pago
+		</a>
+	</div>
+</div>
+<br/>
+<div class="row">
+	<div class="col-sm-12">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>
+						Año
+					</th>	
+					<th>
+						Usuario
+					</th>
+					<th>
+						Acciones
+					</th>
+				</tr> 
+			</thead>
+			<tbody>
+				<tr ng-repeat="mantenimiento in mp.mantenimientos">
+					<th>
+						{{mantenimiento.anio}}
+					</th>	
+					<th>
+						{{mp.cargarNombreUsuario()}}
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,109 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark" ng-show="!ver">
+			<i class="fa fa-pencil-square-o fa-fw "></i> 
+				Condominos
+			<span>&gt; 
+				Nuevo
+			</span>
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12" ng-show="!ver">
+		<a class="btn btn-primary" ui-sref="root.condominos">
+		  Lista Condominos
+		</a>
+	</div>
+</div>
+<br/>
+<div class="row">
+	<div class="col-sm-12">
+		<form id="formCondomino" class="form-horizontal" role="form" data-parsley-validate>
+		<h4>Datos Personales</h4>
+	  	<div class="well">	    
+		    <div class="row">
+		    	<div class="col-sm-4">				    
+				    <label for="nombre">Nombre</label>
+				    <input type="text" class="form-control" placeholder="Nombre" ng-model="con.condomino.profile.nombre" required>						
+		    	</div>
+		    	<div class="col-sm-4">
+				    <label for="apPaterno">Apellido Paterno</label>
+				    <input type="text" class="form-control" id="apPaterno" placeholder="Apellido Paterno" ng-model="con.condomino.profile.apPaterno" required>
+		    	</div>
+		    	<div class="col-sm-4">
+				    <label for="apMaterno">Apellido Materno</label>
+				    <input type="text" class="form-control" id="apMaterno" placeholder="Apellido Materno" ng-model="con.condomino.profile.apMaterno">
+		    	</div>
+		    </div>
+		    <div class="row">					
+				<div class="col-sm-3">
+				    <label for="sexo">Sexo</label>
+				    <select ng-model="con.condomino.profile.sexo" data-placeholder="Seleccione" class="form-control">
+						    <option value=""></option>
+						    <option value="masculino">Masculino</option>
+						    <option value="femenino">Femenino</option>
+						</select>
+		    	</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<label for="correo">Correo electrónico</label>
+						<input type="email" class="form-control" placeholder="Correo" ng-model="con.condomino.profile.correo">
+					</div>
+				</div>
+		    </div>
+		    <div ng-if="con.action">
+			    <div class="row">
+				    <div class="col-sm-3">				    
+					    <label for="nombre">Usuario</label>
+					    <input type="text" class="form-control" placeholder="Usuario" ng-model="con.condomino.nombreUsuario" required>
+			    	</div>
+			    	<div class="col-sm-3">				    
+					    <label for="nombre">Contraseña</label>
+					    <input type="password" class="form-control" placeholder="Contraseña" ng-model="con.condomino.contrasena" required>						
+			    	</div>
+			    	<div class="col-sm-3">
+					    <label for="apPaterno">Repetir Contraseña</label>
+					    <input type="password" class="form-control" placeholder="Repetir Contraseña" ng-model="con.condomino.repetirContrasena" required>
+			    	</div>
+			    </div>
+		    </div>
+	  	<div class="well">				 
+				<div class="row">
+					<div class="col-sm-6">
+							<label for="talla">Fotografía</label>
+							<button class="btn btn-primary" ng-click="con.tomarFoto()"><i class="fa fa-camera"></i></button>
+							<img width="100px" ng-src="{{con.condomino.profile.fotografia}}" ng-class="{'img-thumbnail': !!condomino.profile.fotografia}" />
+						</div>
+					</div>
+				</div> 
+	  	</div>
+		  <hr/>	  
+		  <h4>Domicilio</h4>
+		  <div class="well">
+			  <div class="row">
+			  	<div class="col-sm-3">
+			  		<label for="calleNum">Número</label>
+				    <input type="text" class="form-control" id="calleNum" placeholder="Calle y Número" ng-model="con.condomino.profile.calleNum">
+			  	</div>
+			  </div>
+			  <div class="row">
+			  	<div class="col-sm-4">
+			  		<label for="tel1">Tel. 1</label>
+						<input type="text" class="form-control" id="tel1" placeholder="Teléfono 1" ng-model="con.condomino.profile.tel1" required>
+			  	</div>
+			  	<div class="col-sm-4">
+						<label for="tel2">Tel. 2</label>
+						<input type="text" class="form-control" id="tel2" placeholder="Teléfono 2" ng-model="con.condomino.profile.tel2">
+			  	</div>
+			  </div>	
+		  </div> 
+		  <div class="row">
+				<div class="col-sm-12">
+					<input type="submit" ng-click="con.guardar(con.condomino)" value="Guardar" class="btn btn-primary" ng-show="con.action">
+					<input type="submit" ng-click="con.actualizar(con.condomino)" value="Actualizar" class="btn btn-primary" ng-show="!con.action">				
+				</div>
+			</div>	  
+	  </form>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-sm-12">
+		<a class="btn btn-primary" ui-sref="root.nuevocondomino">
+		  Nuevo
+		</a>
+	</div>
+</div>
+<br/>
+<div class="row">
+	<div class="col-sm-12">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>
+						Nombre Completo
+					</th>	
+					<th>
+						Usuario
+					</th>
+					<th>
+						Acciones
+					</th>
+				</tr> 
+			</thead>
+			<tbody>
+				<tr ng-repeat="condomino in con.condominos">
+					<th>
+						{{condomino.profile.nombre}}
+					</th>	
+					<th>
+						{{condomino.username}}
+					</th>
+					<th>
+						
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
